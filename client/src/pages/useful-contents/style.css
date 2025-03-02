@@ -1,0 +1,123 @@
+/* General container styles */
+.contents-container {
+  padding: 2em;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  margin-top: 6em;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  color: #333 !important;
+  font-weight: bold;
+}
+
+/* Grid layout for content cards (updated for responsiveness) */
+.contents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2em;
+  padding: 0 1em;
+}
+
+/* Content card styles */
+.content-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content-card .content-media {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-card .content-image,
+.content-card .video-frame {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.video-frame {
+  border: none;
+}
+
+.content-card .content-details {
+  padding: 1.5em;
+  flex: 1;
+}
+
+.content-card .content-title {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+}
+
+.content-card .content-description {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 1em;
+}
+
+.content-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+}
+
+/* Style for PDF link */
+.content-card a.pdf-link {
+  color: #28a745;
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+.content-card a.pdf-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile-first design */
+@media screen and (max-width: 768px) {
+  .contents-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2.2em;
+  }
+
+  .content-card .content-title {
+    font-size: 1.4em;
+  }
+
+  .content-card .content-description {
+    font-size: 0.95em;
+  }
+}

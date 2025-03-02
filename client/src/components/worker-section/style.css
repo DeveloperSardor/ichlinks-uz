@@ -1,0 +1,168 @@
+/* Rahbariyat Container */
+.rahbariyat-container {
+  padding: 2em;
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1.5em;
+}
+
+/* Leaders Grid */
+.leaders-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  width: 90%;
+  margin: 0 auto;
+  /* justify-content: center; */
+  align-items: stretch;
+}
+
+/* Leader Card */
+.leader-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  height: 380px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  width: 350px;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Leader Image */
+.leader-image {
+  width: 185px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1em;
+  border: 2px solid #007bff;
+}
+
+/* Leader Name */
+.leader-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.leader-role{
+  font-size: 14px;
+}
+
+/* Leader Position */
+.leader-position {
+  font-size: 14px;
+  color: #555;
+}
+
+.leader-time {
+  margin-top: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  font-size: 14.2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.leader-date {
+  margin-top: 0.4em;
+}
+
+.admission {
+  border: #007bff 2px solid;
+  padding: 0.4em;
+  margin-top: 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.260em;
+  border-radius: 0.4em;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .leaders-grid {
+      gap: 1.5em;
+  }
+  .leader-card {
+      width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+      font-size: 24px;
+  }
+
+  .leaders-grid {
+      flex-direction: column;
+      gap: 2em;
+      justify-content: center;
+  }
+
+  .leader-card {
+      width: 90%;
+      padding: 1em;
+      height: 260px;
+  }
+
+  .leader-name {
+      font-size: 16px;
+  }
+
+  .leader-position {
+      font-size: 12px;
+  }
+
+  .leader-image {
+      width: 150px;
+      height: 150px;
+  }
+
+  .leader-time {
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+      font-size: 20px;
+  }
+
+  .leader-card {
+      width: 100%;
+      padding: 0.8em;
+  }
+
+  .leader-name {
+      font-size: 14px;
+  }
+
+  .leader-position {
+      font-size: 10px;
+  }
+
+  .leader-image {
+      width: 120px;
+      height: 120px;
+  }
+
+  .leader-time {
+      font-size: 12px;
+  }
+}

@@ -1,0 +1,310 @@
+.home-page{
+  padding-bottom: 3em;
+}
+.home-page .hero_section {
+    position: relative;
+    height: 65vh;
+    background-image: url(../../assets/bg-home.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Overlay filterni qo'shish */
+  .home-page .hero_section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); To'qroq filter */
+    z-index: 1;
+    /* backdrop-filter: blur(4px); Blur effekti */
+  }
+  
+  /* Kontent ustki qatlamda ko'rinishi uchun */
+  .home-page .hero_section .content_ {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    text-align: center;
+  }
+  
+  .home-page .hero_section .title {
+    font-size: 27px;
+    width: 55%;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 39px;
+    font-weight: bold;
+  }
+  
+
+  
+  .home-page .hero_section .txt {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .home-page .hero_section button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .home-page .hero_section button:hover {
+    background-color: #ddd;
+  }
+
+  .home-page .news_section{
+    background-image: url(../../assets/news-bg.jpg);
+  }
+
+  .home-page .news_section .container_{
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 3em;
+  }
+
+  .home-page .news_section .container_ .heading{
+    font-size: 32px;
+  }
+
+  .home-page .news_section .container_ .news_wrp{
+    display: flex;
+    /* gap: 2em; */
+    flex-wrap: wrap;
+    gap: 4em;
+    /* justify-content: space-between; */
+  }
+
+  .home-page .map{
+    width: 80%;
+    margin: 2em auto;
+  }
+
+
+  /* Hero Section Styling */
+.hero_section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #000 url('/path/to/your/background.jpg') no-repeat center center/cover; */
+  /* color: white; */
+  overflow: hidden;
+}
+
+/* Overlay for a darker background effect */
+.hero_section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); Dark overlay */
+  z-index: 1;
+}
+
+/* Content inside the hero section */
+.hero_section .content_ {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Animation for the hero title */
+.hero_section .content_ .title {
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start slightly below its position */
+  animation: fadeInUp 2s ease-out forwards; /* Fade and move up */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+
+/* Documents Section */
+.documents_section {
+  background: #f9f9f9;
+  padding: 3em 0;
+  min-height: 50vh;
+}
+
+.documents_section .container_ {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.documents_section .heading {
+  font-size: 32px;
+  margin-bottom: 1em;
+}
+
+.documents_wrp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.document_card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doc_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.doc_text {
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+.doc_link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.doc_link:hover {
+  text-decoration: underline;
+}
+
+/* Departments Section */
+.departments_section {
+  background: #fff;
+  padding: 3em 0;
+}
+
+.departments_section .container_ {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.departments_section .heading {
+  font-size: 32px;
+  margin-bottom: 1em;
+}
+
+.departments_wrp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.department_card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.department_img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  border-radius: 8px;
+}
+
+.dep_title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Hero Section Styling */
+.hero_section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Overlay for a darker background effect */
+.hero_section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Content inside the hero section */
+.hero_section .content_ {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Animation for the hero title */
+.hero_section .content_ .title {
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start slightly below its position */
+  animation: fadeInUp 2s ease-out forwards; /* Fade and move up */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .hero_section .content_ .title {
+    font-size: 1.8rem; /* Slightly smaller for large tablets */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero_section .content_ .title {
+    font-size: 1.5rem; /* Smaller font size for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero_section .content_ .title {
+    font-size: 1.2rem; /* Even smaller for mobile devices */
+  }
+}

@@ -1,0 +1,89 @@
+.home-page .news_section .container_ .news_wrp {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card {
+  width: calc(33.333% - 1em); /* Uchta karta yonma-yon */
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Karta soyasi */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em; /* Ichki bo'shliqni kamaytirish */
+  padding: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Hover effekti */
+}
+
+.home-page .news_section .container_ .news_wrp .news_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card .title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card .txt {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card button {
+  padding: 10px 16px;
+  background: #1f7135;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.home-page .news_section .container_ .news_wrp .news_card button:hover {
+  background: #155728;
+}
+
+/* =========== RESPONSIVE DESIGN =========== */
+
+/* 1024px dan kichik ekranlar uchun (planshetlar) */
+@media (max-width: 1024px) {
+  .home-page .news_section .container_ .news_wrp .news_card {
+    width: calc(50% - 1em); /* Ikkita karta yonma-yon */
+    gap: 0.7em;
+  }
+}
+
+/* 768px dan kichik ekranlar uchun (mobil qurilmalar) */
+@media (max-width: 768px) {
+.home-page .news_section .container_{
+  width: 95% !important;
+} 
+
+  .home-page .news_section .container_ .news_wrp {
+
+    gap: 1em; /* Bo'shliqni moslashtirish */
+  }
+
+  .home-page .news_section .container_ .news_wrp .news_card {
+    width: 100%; /* Har bir karta bitta qator bo'lib chiqadi */
+    gap: 0.6em;
+    padding: 0.8em;
+  }
+
+  .home-page .news_section .container_ .news_wrp .news_card img {
+    border-radius: 5px;
+  }
+}

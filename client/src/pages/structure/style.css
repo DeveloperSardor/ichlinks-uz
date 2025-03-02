@@ -1,0 +1,63 @@
+.structure-page {
+    padding: 5.5em 20px;
+  }
+  
+  .structure-page .container {
+    border: 1px solid #ccc;
+    width: 70%;
+    margin: 1em auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .strc-img {
+    display: block;
+    width: 100%; /* Kichik ekranlar uchun kenglikni moslash */
+    height: auto; /* Proportsiyani saqlash */
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  
+  /* Responsiv dizayn uchun media qoidalar */
+  @media (max-width: 1024px) {
+    .structure-page .container {
+      width: 85%; /* O'rtacha ekranlar uchun kenglikni oshirish */
+    }
+  
+    .strc-img {
+      width: 100%; /* Rasmlarni konteyner ichida qoldirish */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .structure-page {
+      padding: 4em 15px; /* Kichik ekranlar uchun paddings kamaytirildi */
+    }
+  
+    .structure-page .container {
+      width: 90%; /* Konteynerni kichik ekranlarga moslash */
+      margin: 1em auto;
+    }
+  
+    .strc-img {
+      border-radius: 3px; /* Radiusni kichraytirish */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .structure-page {
+      padding: 3em 10px; /* Eng kichik ekranlar uchun paddings */
+    }
+  
+    .structure-page .container {
+      width: 100%; /* To'liq kenglikda konteyner */
+      border: none; /* Kerak bo'lsa, chegara olib tashlanadi */
+      box-shadow: none; /* Soya olib tashlandi */
+    }
+  
+    .strc-img {
+      border-radius: 0; /* Radiusni olib tashlash */
+    }
+  }
+  
