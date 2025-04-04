@@ -47,7 +47,7 @@ const NewsCard = ({ data }) => {
 
       {/* Render title and text */}
       <h3 className="title"> {currentLang == 'uz' ? title_uz : currentLang == 'ru' ? title_ru : title_en}  </h3>
-      <p className="txt">{currentLang == 'uz' ? text_uz : currentLang == 'ru' ? text_ru : text_en} </p>
+      <p className="txt">{currentLang == 'uz' ? text_uz.slice(0,150) + '...' : currentLang == 'ru' ? text_ru.slice(0, 150) + '...' : text_en.slice(0, 150) + '...'} </p>
 
       <button className="details_button">{t('moreBtn')}</button>
     </div>

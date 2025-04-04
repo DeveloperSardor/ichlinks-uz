@@ -16,6 +16,7 @@ import Departments from './pages/departments/Departments'
 import Charter from './pages/charter/Charter'
 import JobVacancies from './pages/jobs/Jobs'
 import NationalPage from './pages/national-page/NationalPage'
+import ExpeditionPage from './pages/expedition/ExpeditionPage'
 import DocsPage from './pages/docs-page/Docs'
 import UsefulContents from './pages/useful-contents/UsefulContent'
 import ScientificArticles from './pages/articles/Articles'
@@ -27,6 +28,9 @@ import { useTranslation } from 'react-i18next'
 import YuneskoPage from './pages/yunesko/Yunesko'
 import LocalList from './pages/local-list/LocalList'
 import SingleArticle from './pages/article-single/ArticleSingle'
+import InternalAudit from './pages/internal-audit/InternalAudit'
+
+
 
 const App = () => {
   const { t, i18n } = useTranslation('global')
@@ -61,11 +65,16 @@ const App = () => {
         <Route path='/charter' element={<Charter />} />
         <Route path='/jobs' element={<JobVacancies />} />
         <Route path='/national' element={<NationalPage />} />
+        <Route path='/expedition' element={<ExpeditionPage />} />
         <Route path='/yunesko' element={<YuneskoPage />} />
         <Route path='/local-list' element={<LocalList />} />
         <Route path='/docs' element={<DocsPage />} />
         <Route path='/resources' element={<UsefulContents />} />
         <Route path='/articles' element={<ScientificArticles />} />
+        <Route
+        path='/internal-audit'
+        element={<InternalAudit/>}
+        />
         <Route path='/articles/:id' element={<SingleArticle />} />
         <Route path='/announcements' element={<Announcements />} />
         <Route path='/announcements/:id' element={<AnnouncementSingle />} />

@@ -29,15 +29,18 @@ const NewsSinglePage = () => {
   }, [id]);
 
   // Slider settings
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true, // Enable arrows for navigation
-    adaptiveHeight: true, // Ensure that height adapts to content
-  };
+ // Slider settings
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  adaptiveHeight: true,
+  prevArrow: <div className="custom-prev-arrow"></div>, // Custom arrow
+  nextArrow: <div className="custom-next-arrow"></div>, // Custom arrow
+};
+
 
   return (
     <div className="news-single">

@@ -1,111 +1,139 @@
-/* src/ScientificArticles.css */
+/* General container styling */
+.articles-container {
+  padding: 6em 20px;
+  background: #ffffff; /* Oq fon */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 3em;
+  text-align: center; /* Title markazda joylashishi uchun */
+}
 
-/* General styles */
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7fa;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
-  } */
-  
-  /* Articles container */
-  .articles-container {
-    padding: 6.5em 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
+/* Title styling */
+.page-title {
+  text-align: center;
+  font-size: 2em; /* Kichikroq font */
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+  letter-spacing: 0.5px;
+  text-transform: none; /* Uppercase emas */
+}
+
+/* Grid layout */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5em;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Article card */
+.article-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Article content */
+.article-content {
+  padding: 1.2em;
+  text-align: center;
+}
+
+.article-title {
+  font-size: 0.95em; /* Kichikroq font */
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-transform: none; /* Uppercase emas */
+}
+
+.article-description {
+  font-size: 0.85em; /* Kichikroq font */
+  color: #555;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+
+/* Read more button */
+.read-more-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 0.9em; /* Kichikroq font */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  gap: 6px;
+}
+
+.read-more-btn i {
+  font-size: 1em;
+}
+
+.read-more-btn:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9em; /* Kichikroq font */
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media screen and (max-width: 992px) {
   .articles-grid {
-    margin: 2.5em auto;
-    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    justify-items: center;
+@media screen and (max-width: 768px) {
+  .articles-container {
+    padding: 5em 15px;
   }
-  
-  /* Article card */
-  .article-card {
-    background-color: #fff;
-    border-radius: 8px;
-    cursor:  pointer;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .article-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .article-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #f4f4f4;
-  }
-  
-  .article-content {
-    padding: 15px;
-  }
-  
-  .article-title {
-    font-size: 21px !important;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .article-description {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 15px;
-  }
-  
-  .read-more-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .read-more-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .articles-container {
-      padding: 6.2em 15px;
-    }
-    
-    h1 {
-      font-size: 2rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .articles-container {
-      padding: 6em 10px;
-    }
-  
-    .article-card {
-      width: 100%;
-    }
-  }
-  
+}

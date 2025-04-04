@@ -10,10 +10,16 @@
       "jobs": "Bo'sh ish o'rinlari",
       "contactUs": "Biz bilan bog'lanish"
     },
+   "openData": {
+        "openData": "Ochiq ma'lumotlar",
+        "internalAudit": "Ichki audit",
+        "jobs": "Bo'sh ish o'rinlari"
+      },   
     "nmm": {
       "nmm": "NMM",
       "yunesko": "Yunesko ro'yxati",
       "national": "Milliy ro'yxat",
+      "expedition" : "Ekspeditsiyalar",
       "localList": "Mahalliy ro'yxat"
     },
     "news": {

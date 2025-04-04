@@ -16,13 +16,16 @@ import DepartmentPage from './pages/department/Department';
 import Chapter from './pages/charter/Charter';
 import Vacancies from './pages/vacancies/Vacancies';
 import RolesPage from './pages/role-page/RolesPage';
+import AuditPage from './pages/audit/Audit'
 import VacancyApplications from './pages/vacancy-appeals/VacancyAppeals';
 import UneskoPage from './pages/unesko/Unesko';
 import NationalListPage from './pages/national-list/NationalList';
+import ExpeditionsPage from './pages/expedition/Expeditions';
 import LocalList from './pages/local-list/LocalList';
 import Articles from './pages/articles/Articles';
 import Contacts from './pages/contact/Contact';
 import UsefulResources from './pages/useful-resources/UsefulResources';
+import Audit from './pages/audit/Audit';
 
 // Tilni olish va saqlash uchun funksiyalar
 const getInitialLang = () => localStorage.getItem('currentLang') || 'en';
@@ -53,11 +56,13 @@ const App = () => {
         <Route path="/leadership" element={<ProtectedRoute><Leadership /></ProtectedRoute>} />
         <Route path="/department" element={<ProtectedRoute><DepartmentPage /></ProtectedRoute>} />
         <Route path="/charter" element={<ProtectedRoute><Chapter /></ProtectedRoute>} />
+        <Route path="/audit" element={<ProtectedRoute><Audit /></ProtectedRoute>} />
         <Route path="/vacancy" element={<ProtectedRoute><Vacancies /></ProtectedRoute>} />
         <Route path="/vacancy-applications" element={<ProtectedRoute><VacancyApplications /></ProtectedRoute>} />
         <Route path="/roles" element={<ProtectedRoute><RolesPage /></ProtectedRoute>} />
         <Route path="/unesko" element={<ProtectedRoute><UneskoPage /></ProtectedRoute>} />
         <Route path="/national" element={<ProtectedRoute><NationalListPage /></ProtectedRoute>} />
+        <Route path="/expedition" element={<ProtectedRoute><ExpeditionsPage /></ProtectedRoute>} />
         <Route path="/local-list" element={<ProtectedRoute><LocalList /></ProtectedRoute>} />
         <Route path="/articles" element={<ProtectedRoute><Articles /></ProtectedRoute>} />
         <Route path="/useful-resources" element={<ProtectedRoute><UsefulResources /></ProtectedRoute>} />

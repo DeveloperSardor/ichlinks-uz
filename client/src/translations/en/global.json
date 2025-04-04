@@ -10,10 +10,16 @@
            "jobs" : "Job vacancies",
            "contactUs" : "Contact us"
         },
+        "openData": {
+            "openData": "Open Data",
+            "internalAudit": "Internal Audit",
+            "jobs": "Job Vacancies"
+          },
         "nmm" : {
             "nmm" : "NMM",
             "yunesko" : "Yunesko list",
             "national" : "National list",
+            "expedition" : "Expeditions",
             "localList" : "Local list"
         },
         "news" : {

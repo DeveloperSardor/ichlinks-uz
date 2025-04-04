@@ -78,11 +78,10 @@
   
   /* Desktop navigation */
   .nav-menu {
-    padding: 0 50px;
+    padding: 0 -20px;
     display: flex;
-    width: 920px;
-    /* background: #000; */
-    gap: 2em;
+    width: 990px;
+    gap: 0em;
     align-items: center;
   }
   

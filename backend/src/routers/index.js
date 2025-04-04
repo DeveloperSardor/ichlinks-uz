@@ -19,6 +19,8 @@ import VacancyAppealRouter from "./vacancy-appeal.js";
 import UneskoRouter from "./unesko.js";
 import LocalListRouter from "./local-list.js";
 import AdminRouter from "./admin.js";
+import AuditRouter from "./audit.js";
+import ExpeditionRouter from './expeditions.js'
 
 
 const ApiRouter = Router();
@@ -43,10 +45,10 @@ ApiRouter.use('/partners', PartnersRouter)
 ApiRouter.use('/resources', ResourcesRouter)
 ApiRouter.use('/roles', RolesRouter)
 ApiRouter.use('/structure', StructureRouter)
+ApiRouter.use('/expedition', ExpeditionRouter)
 ApiRouter.use('/vacancy-applications', VacancyAppealRouter)
 ApiRouter.use('/admin', AdminRouter)
-
-
+ApiRouter.use('/audit', AuditRouter)
 
 
 

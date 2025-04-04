@@ -108,6 +108,9 @@ const Header = () => {
                     <Link to={"/national"} onClick={handleLinkClick}>{t("navbar.nmm.national")}</Link>
                   </li>
                   <li>
+                    <Link to={"/expedition"} onClick={handleLinkClick}>{t("navbar.nmm.expedition")}</Link>
+                  </li>
+                  <li>
                     <Link to={"/local-list"} onClick={handleLinkClick}>{t("navbar.nmm.localList")}</Link>
                   </li>
                 </ul>
@@ -138,6 +141,34 @@ const Header = () => {
             <li>
               <Link to={"/docs"} onClick={handleLinkClick}>{t("navbar.docs")}</Link>
             </li>
+
+
+
+
+
+{/* Ochiq ma'lumotlar */}
+<li
+  onMouseEnter={() => toggleDropdown("openData")}
+  onMouseLeave={() => toggleDropdown(null)}
+>
+  <Link onClick={handleLinkClick}>{t("navbar.openData.openData")}</Link>
+  {openDropdown === "openData" && (
+    <ul className="dropdown">
+      <li>
+        <Link to={"/internal-audit"} onClick={handleLinkClick}>
+          {t("navbar.openData.internalAudit")}
+        </Link>
+      </li>
+      <li>
+        <Link to={"/jobs"} onClick={handleLinkClick}>
+          {t("navbar.openData.jobs")}
+        </Link>
+      </li>
+    </ul>
+  )}
+</li>
+
+
 
             {/* Kutubxona */}
             <li

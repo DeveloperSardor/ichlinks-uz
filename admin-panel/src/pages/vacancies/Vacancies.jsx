@@ -131,7 +131,8 @@ const VacanciesPage = () => {
         <div className="vacancies-grid">
           {vacancies.map(vacancy => (
             <div key={vacancy._id} className="vacancy-card">
-              <h3>{vacancy[`title_${currentLang}`]}</h3> {/* Use dynamic title based on language */}
+              <h3>{vacancy.role[`name_${currentLang}`]}</h3>
+              <h4 style={{ marginTop : "1em" }}>{vacancy[`title_${currentLang}`]}</h4> {/* Use dynamic title based on language */}
               <p>{vacancy[`text_${currentLang}`]}</p> {/* Use dynamic text based on language */}
               <div className="card-buttons">
                 <button onClick={() => openModal(vacancy)}>{t('edit')}</button> {/* Translated Edit button */}

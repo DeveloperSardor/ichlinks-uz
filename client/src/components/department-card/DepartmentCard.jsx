@@ -11,7 +11,7 @@ const DepartmentCard = ({data}) => {
     <div className='department-card'>
       <img src={data?.img} alt='yunesko'/>
       <h3 className='title_'>{ currentLang == 'uz' ? data.title_uz : currentLang == 'ru' ? data.title_ru : data.title_en}</h3>
-      <p>{data.role.name_en}</p>
+      {/* <p>{data.role.name_en}</p> */}
     </div>
   )
 }

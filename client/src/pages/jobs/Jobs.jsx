@@ -7,7 +7,7 @@ const JobVacancies = () => {
   const { t } = useTranslation('global');
   const contextDatas = useContext(Context);
   const currentLang = contextDatas.currentLang;
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const [vacancies, setVacancies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -20,11 +20,14 @@ const JobVacancies = () => {
   });
   const [appliedVacancies, setAppliedVacancies] = useState([]);
 
+
+
+
   // Fetch job vacancies
   useEffect(() => {
     const fetchVacancies = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/job-vacancies');
+        const response = await fetch(`${BACKEND_URL}/api/job-vacancies`);
         const data = await response.json();
         if (data.success) {
           setVacancies(data.data);
@@ -55,8 +58,8 @@ const JobVacancies = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/vacancy-applications', {
-        method: 'POST',
+      const response = await fetch(`${BACKEND_URL}/api/vacancy-applications`, {
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },

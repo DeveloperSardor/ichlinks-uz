@@ -10,10 +10,16 @@
            "jobs" : "Вакансии",
            "contactUs" : "Связаться с нами"
         },
+       "openData": {
+              "openData": "Открытые данные",
+              "internalAudit": "Внутренний аудит",
+              "jobs": "Вакансии"
+            },
         "nmm" : {
             "nmm" : "NMM",
             "yunesko" : "В список ЮНЕСКО",
             "national" : "Национальный список",
+            "expedition" : "Экспедиции",
             "localList" : "Локальный список"
         },
         "news" : {
