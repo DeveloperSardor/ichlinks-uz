@@ -200,7 +200,11 @@
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 1em;
+<<<<<<< HEAD
   cursor: pointer; 
+=======
+  cursor: pointer;
+>>>>>>> 8ba622b (inital commit)
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 

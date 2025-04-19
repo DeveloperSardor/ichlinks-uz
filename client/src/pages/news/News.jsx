@@ -20,14 +20,18 @@ const NewsPage = () => {
     async function fetchNews() {
       try {
         const { data } = await axios.get(`${BACKEND_URL}/api/news`);
-        setNews(data?.data);
+        const sortedNews = data?.data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        setNews(sortedNews);
       } catch (error) {
         toast.error(error.message);
       }
     }
-
+  
     fetchNews();
-  }, []); // Empty dependency array ensures this runs only once when the component mounts
+  }, []);
+  
 
   // Newsni sahifalarga ajratish
   const indexOfLastNews = currentPage * newsPerPage; // Oxirgi ko'rsatilgan e'lon
