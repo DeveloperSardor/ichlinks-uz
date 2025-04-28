@@ -18,7 +18,7 @@ export class JobVacanciesContr {
           status: 200,
           message: `Vacancies`,
           success: true,
-          data: await JobVacanciesSchema.find().populate('role'),
+          data: await JobVacanciesSchema.find({}).sort({ createdAt : -1 }).populate('role'),
         });
       }
     } catch (error) {

@@ -199,19 +199,19 @@ const ExpeditionsPage = () => {
     setModalOpen(true);
   };
 
-  const handleDeleteExpediton = async (id) => {
-    try {
-      const res = await axios.delete(`${BACKEND_URL}/api/expedition/${id}`);
-      if (res.data.success) {
-        toast.success(data.message);
-        fetchExpedition();
-      } else {
-        toast.error(t("errorDeletingNews"));
-      }
-    } catch (error) {
-      toast.error(error.message);
+ const handleDeleteExpediton = async (id) => {
+  try {
+    const res = await axios.delete(`${BACKEND_URL}/api/expedition/${id}`);
+    if (res.data.success) {
+      toast.success(t("Successfuly deleted"));  // O'zgartirish: `data.message` o'rniga aniq xabar
+      fetchExpedition();  // Yangilangan expedition ma'lumotlarini olish
+    } else {
+      toast.error(t("errorDeletingExpedition"));
     }
-  };
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
   const renderUploadedFiles = () => {
     if (!formData.images || formData.images.length === 0) return null;
@@ -392,7 +392,7 @@ const ExpeditionsPage = () => {
 {renderUploadedFiles()}
 {youtubeError && <p className="error">{youtubeError}</p>}
 <button type="submit" disabled={loading}>
-  {loading ? t("loading") : t("add")}
+  {loading ? t("loading") : t("edit")}
 </button>
 <button type="button" onClick={handleModalClose}>
   {t("cancel")}

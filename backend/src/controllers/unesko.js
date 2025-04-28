@@ -19,7 +19,7 @@ export class UneskoContr {
                     status : 200,
                     message : "Unesko datas",
                     success : true,
-                    data : await UneskoSchema.find()
+                    data : await UneskoSchema.find().sort({ createdAt : -1})
                 })
             }
         } catch (error) {

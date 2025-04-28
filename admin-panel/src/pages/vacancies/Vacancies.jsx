@@ -51,6 +51,7 @@ const VacanciesPage = () => {
       setNewVacancy({
         role: '', title_en: '', title_ru: '', title_uz: '', text_en: '', text_ru: '', text_uz: ''
       });
+      fetchVacancies()
       setIsModalOpen(false);
     } catch (error) {
       console.error('Error adding vacancy:', error);
@@ -61,6 +62,7 @@ const VacanciesPage = () => {
     try {
       await axios.delete(`${BACKEND_URL}/api/job-vacancies/${id}`);
       setVacancies(vacancies.filter(vacancy => vacancy._id !== id));
+      fetchVacancies()
     } catch (error) {
       console.error('Error deleting vacancy:', error);
     }
@@ -92,6 +94,7 @@ const VacanciesPage = () => {
 
       setEditVacancy(null);
       setIsModalOpen(false);
+      fetchVacancies()
     } catch (error) {
       console.error('Error updating vacancy:', error);
     }

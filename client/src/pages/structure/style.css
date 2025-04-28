@@ -1,5 +1,6 @@
 .structure-page {
     padding: 5.5em 20px;
+    margin-top: 2.5em;
   }
   
   .structure-page .container {
@@ -32,6 +33,7 @@
   
   @media (max-width: 768px) {
     .structure-page {
+      margin-top: 1em;
       padding: 4em 15px; /* Kichik ekranlar uchun paddings kamaytirildi */
     }
   

@@ -30,6 +30,8 @@ const Audit = () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/api/audit`);
       setDocs(response.data.data);
+      console.log(response.data.data);
+      
     } catch (error) {
       console.error('Error fetching docs:', error);
     }
@@ -44,6 +46,7 @@ const Audit = () => {
         desc_en: '', desc_ru: '', desc_uz: ''
       });
       setIsModalOpen(false);
+      fetchDocs()
     } catch (error) {
       console.error('Error adding doc:', error);
     }

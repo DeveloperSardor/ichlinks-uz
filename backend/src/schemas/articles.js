@@ -8,6 +8,8 @@ const ArticlesSchema = new Schema({
     desc_ru: { type: String },
     desc_uz: { type: String },
     pdf_file: { type: String } // img o'rniga pdf_file
+}, {
+    timestamps : true
 });
 
 export default model('Articles', ArticlesSchema);

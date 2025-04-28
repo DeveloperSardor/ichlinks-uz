@@ -18,7 +18,7 @@ export class ResourceContr {
           status: 200,
           message: "Resources",
           success: true,
-          data: await ResourcesSchema.find(),
+          data: await ResourcesSchema.find().sort({ createdAt : -1 }),
         });
       }
     } catch (error) {

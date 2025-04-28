@@ -56,6 +56,7 @@ const VacancyApplications = () => {
           setApplicationsData((prev) =>
             prev.filter((application) => application._id !== id)
           );
+          fetchApplications();
         } else {
           toast.error(res.data.message);
         }
@@ -81,6 +82,16 @@ const VacancyApplications = () => {
     return <div className="pagination">{pageNumbers}</div>;
   };
 
+  // Sanani formatlash uchun yordamchi funksiya
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(currentLang, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
   return (
     <div className="vacancy-applications-page">
       <Sidebar />
@@ -93,6 +104,7 @@ const VacancyApplications = () => {
               <h2>{application.name}</h2>
               <p>{t("phone")}: {application.phone}</p>
               <p>{t("applicationText")}: {application.text}</p>
+              <p>{t("submittedOn")}: {formatDate(application.createdAt)}</p>
               <a href={application.resume} target="_blank" rel="noopener noreferrer">
                 {t("viewResume")}
               </a>

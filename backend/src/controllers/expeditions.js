@@ -14,13 +14,13 @@ export class ExpeditionsContr {
           success: true,
           data: await ExpeditionsSchema.findById(id),
         });
-      }else{
+      } else {
         res.send({
-            status : 200,
-            message : "Expeditions datas",
-            success : true,
-            data : await ExpeditionsSchema.find()
-        })
+          status: 200,
+          message: "Expeditions datas",
+          success: true,
+          data: await ExpeditionsSchema.find().sort({ createdAt : -1 }),
+        });
       }
     } catch (error) {
       res.send({
@@ -130,8 +130,10 @@ export class ExpeditionsContr {
   static async Delete(req, res) {
     try {
       const { id } = req.params; // O'chirilishi kerak bo'lgan ma'lumotning ID
-
+      console.log(id);
+      
       const deletedExpedition = await ExpeditionsSchema.findByIdAndDelete(id);
+// console.log(deletedExpedition);
 
       if (!deletedExpedition) {
         return res.send({

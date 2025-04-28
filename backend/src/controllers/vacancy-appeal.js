@@ -3,32 +3,35 @@ import VacancyAppealSchema from '../schemas/vacancy-appeal.js'
 export class VacancyAppealContr{
     constructor(){}
 
-    static async Get(req, res){
+    static async Get(req, res) {
         try {
             const { id } = req.params;
-            if(id){
-             res.send({
-                status : 200,
-                message : `Vacancy appeal by id`,
-                success : true,
-                data : await VacancyAppealSchema.findById(id).populate('vacancy')
-             })
-            }else{
+            if (id) {
                 res.send({
-                    status : 200,
-                    message : `Vacancy appeals`,
-                    success : true,
-                    data : await VacancyAppealSchema.find().populate('vacancy')
-                 })
+                    status: 200,
+                    message: `Vacancy appeal by id`,
+                    success: true,
+                    data: await VacancyAppealSchema.findById(id).populate('vacancy')
+                });
+            } else {
+                res.send({
+                    status: 200,
+                    message: `Vacancy appeals`,
+                    success: true,
+                    data: await VacancyAppealSchema.find({}).sort({ createdAt: -1 }).populate('vacancy')
+                });
             }
         } catch (error) {
             res.send({
-                status : 400,
-                message : error.message,
-                success : false
-            })
+                status: 400,
+                message: error.message,
+                success: false
+            });
         }
     }
+    
+
+
     static async Post(req, res){
         try {
             const { vacancy, name, phone,text, resume } = req.body;

@@ -53,6 +53,7 @@ const NationalListPage = () => {
   const fetchNational = async () => {
     try {
       const res = await axios.get(`${BACKEND_URL}/api/national-list`);
+      
       if (res.data.success) {
         setNationalData(res.data.data);
       } else {
@@ -203,7 +204,7 @@ const NationalListPage = () => {
     try {
       const res = await axios.delete(`${BACKEND_URL}/api/national-list/${id}`);
       if (res.data.success) {
-        toast.success(data.message);
+        toast.success(res.data.message);
         fetchNational();
       } else {
         toast.error(t("errorDeletingNews"));
@@ -392,7 +393,7 @@ const NationalListPage = () => {
 {renderUploadedFiles()}
 {youtubeError && <p className="error">{youtubeError}</p>}
 <button type="submit" disabled={loading}>
-  {loading ? t("loading") : t("add")}
+  {loading ? t("loading") : t("edit")}
 </button>
 <button type="button" onClick={handleModalClose}>
   {t("cancel")}

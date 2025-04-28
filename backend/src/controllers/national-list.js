@@ -19,7 +19,7 @@ export class NationalListContr {
             status : 200,
             message : "National list datas",
             success : true,
-            data : await NationalListSchema.find()
+            data : await NationalListSchema.find().sort({ createdAt : -1 })
         })
       }
     } catch (error) {

@@ -39,6 +39,7 @@ const DocsPage = () => {
       setDocs([...docs, response.data.data]);
       setNewDoc({ title_en: '', text_en: '', title_ru: '', text_ru: '', title_uz: '', text_uz: '', link: '' });
       setIsModalOpen(false);
+      fetchDocs()
     } catch (error) {
       console.error('Error adding doc:', error);
     }
@@ -48,6 +49,7 @@ const DocsPage = () => {
     try {
       await axios.delete(`${BACKEND_URL}/api/docs/${id}`);
       setDocs(docs.filter(doc => doc._id !== id));
+      fetchDocs()
     } catch (error) {
       console.error('Error deleting doc:', error);
     }
@@ -79,6 +81,7 @@ const DocsPage = () => {
 
       setEditDoc(null);
       setIsModalOpen(false);
+      fetchDocs()
     } catch (error) {
       console.error('Error updating doc:', error);
     }

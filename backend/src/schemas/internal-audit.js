@@ -20,6 +20,9 @@ const InternalAuditSchema = new Schema({
     desc_uz : {
       type : String
     },
+}, 
+{
+  timestamps : true
 })
 
 

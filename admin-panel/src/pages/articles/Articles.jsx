@@ -30,21 +30,21 @@ const Articles = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await axios.get(`${BACKEND_URL}/api/articles`);
-        if (response.data.success) {
-          setArticlesData(response.data.data);
-        } else {
-          toast.error(t("fetchError"));
-        }
-      } catch (error) {
+  const fetchArticles = async () => {
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/articles`);
+      if (response.data.success) {
+        setArticlesData(response.data.data);
+      } else {
         toast.error(t("fetchError"));
-      } finally {
-        setLoading(false);
       }
-    };
+    } catch (error) {
+      toast.error(t("fetchError"));
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
 
     fetchArticles();
   }, []);
@@ -81,6 +81,7 @@ const Articles = () => {
         );
         setModalOpen(false);
         resetForm();
+        fetchArticles()
       } else {
         toast.error(editing ? t("editError") : t("addError"));
       }
@@ -154,6 +155,7 @@ const Articles = () => {
       if (response.data.success) {
         setArticlesData(articlesData.filter((art) => art._id !== id));
         toast.success(t("deleteSuccess"));
+        fetchArticles()
       } else {
         toast.error(t("deleteError"));
       }

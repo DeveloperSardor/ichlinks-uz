@@ -26,7 +26,7 @@ export class InternalAuditContr {
           status: 200,
           message: "Audits",
           success: true,
-          data: await InternalAuditSchema.find(),
+          data: await InternalAuditSchema.find().sort({ createdAt : -1 }),
         });
       }
     } catch (error) {

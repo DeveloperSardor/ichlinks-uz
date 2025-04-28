@@ -6,17 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 const AnnouncementsPage = () => {
-  const contextDatas = useContext(Context);
-  const currentLang = contextDatas.currentLang;
-  const [t, i18n] = useTranslation('global');
+  const { currentLang } = useContext(Context);
+  const [t] = useTranslation('global');
   const [announcements, setAnnouncements] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);  // Hozirgi sahifa
-  const [announcementsPerPage] = useState(6);  // Sahifada ko'rsatiladigan e'lonlar soni
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;  // Backend URLni o'zgartiring
+  const [currentPage, setCurrentPage] = useState(1);
+  const announcementsPerPage = 6;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
 
-
-  // API'dan e'lonlarni olish
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
@@ -32,20 +29,15 @@ const AnnouncementsPage = () => {
     };
 
     fetchAnnouncements();
-  }, []);
+  }, [BACKEND_URL]);
 
-  // E'lonlarni sahifalarga ajratish
-  const indexOfLastAnnouncement = currentPage * announcementsPerPage;  // Oxirgi ko'rsatilgan e'lon
-  const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;  // Birinchi ko'rsatilgan e'lon
-  const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);  // Hozirgi sahifada ko'rsatiladigan e'lonlar
+  // Sahifalash
+  const indexOfLastAnnouncement = currentPage * announcementsPerPage;
+  const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
+  const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);
 
-  // Sahifa navigatsiyasi uchun
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(announcements.length / announcementsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = Array.from({ length: Math.ceil(announcements.length / announcementsPerPage) }, (_, i) => i + 1);
 
-  // Sahifani o'zgartirish
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -53,6 +45,7 @@ const AnnouncementsPage = () => {
       <header className="ann_header">
         <h1>{t('navbar.news.announcements')}</h1>
       </header>
+
       <div className="ann_grid">
         {currentAnnouncements.map((announcement) => (
           <div
@@ -62,14 +55,16 @@ const AnnouncementsPage = () => {
           >
             <img
               src={announcement.img}
-              alt={announcement.title_uz}
+              alt={announcement[`title_${currentLang}`] || 'Announcement'}
               className="card-image"
             />
             <div className="card-content">
               <h3 className="card-title">
-                {announcement[`title_${currentLang}`]} {/* Dynamic language support */}
+                {announcement[`title_${currentLang}`]}
               </h3>
-              <p className="card-date">{new Date(announcement.createdAt).toLocaleDateString()}</p>
+              <p className="card-date">
+                {new Date(announcement.createdAt).toLocaleDateString()}
+              </p>
               <p className="card-description">
                 {announcement[`desc_${currentLang}`]}
               </p>
@@ -78,7 +73,7 @@ const AnnouncementsPage = () => {
         ))}
       </div>
 
-      {/* Pagination */}
+      {/* Sahifa tugmalari */}
       <div className="pagination">
         {pageNumbers.map((number) => (
           <button

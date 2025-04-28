@@ -31,21 +31,21 @@ const Resources = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
 
-  useEffect(() => {
-    const fetchResources = async () => {
-      try {
-        const response = await axios.get(`${BACKEND_URL}/api/resources`);
-        if (response.data.success) {
-          setResourcesData(response.data.data);
-        } else {
-          toast.error(t("fetchError"));
-        }
-      } catch (error) {
+  const fetchResources = async () => {
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/resources`);
+      if (response.data.success) {
+        setResourcesData(response.data.data);
+      } else {
         toast.error(t("fetchError"));
-      } finally {
-        setLoading(false);
       }
-    };
+    } catch (error) {
+      toast.error(t("fetchError"));
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
 
     fetchResources();
   }, []);
@@ -88,6 +88,7 @@ const Resources = () => {
         );
         setModalOpen(false);
         resetForm();
+        fetchResources()
       } else {
         toast.error(editing ? t("editError") : t("addError"));
       }
@@ -183,6 +184,7 @@ const Resources = () => {
       if (response.data.success) {
         setResourcesData(resourcesData.filter((res) => res._id !== id));
         toast.success(t(""));
+        fetchResources()
       } else {
         toast.error(t("deleteError"));
       }

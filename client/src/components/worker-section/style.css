@@ -21,8 +21,8 @@
   gap: 3em;
   width: 90%;
   margin: 0 auto;
-  /* justify-content: center; */
   align-items: stretch;
+  justify-content: center;
 }
 
 /* Leader Card */
@@ -31,11 +31,11 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.5em;
-  height: 380px;
+  width: 350px;
+  height: auto;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-  width: 350px;
 }
 
 .leader-card:hover {
@@ -60,109 +60,97 @@
   margin-bottom: 0.5em;
 }
 
-.leader-role{
+/* Leader Role */
+.leader-role {
   font-size: 14px;
+  color: #555;
+  margin-bottom: 0.5em;
 }
 
 /* Leader Position */
 .leader-position {
   font-size: 14px;
-  color: #555;
+  color: #777;
 }
 
-.leader-time {
-  margin-top: 0.3em;
+/* Admission Info */
+.admission {
+  border: 2px solid #007bff;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.leader-time, .leader-days {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2em;
-  font-size: 14.2px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.leader-date {
-  margin-top: 0.4em;
-}
-
-.admission {
-  border: #007bff 2px solid;
-  padding: 0.4em;
-  margin-top: 0.4em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.260em;
-  border-radius: 0.4em;
+  font-size: 14px;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
   .leaders-grid {
-      gap: 1.5em;
+    gap: 2em;
   }
+
   .leader-card {
-      width: 45%;
+    width: 45%;
   }
 }
 
 @media (max-width: 768px) {
   .section-title {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .leaders-grid {
-      flex-direction: column;
-      gap: 2em;
-      justify-content: center;
+    flex-direction: column;
+    gap: 2em;
   }
 
   .leader-card {
-      width: 90%;
-      padding: 1em;
-      height: 260px;
+    width: 90%;
+    padding: 1em;
   }
 
   .leader-name {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .leader-position {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .leader-image {
-      width: 150px;
-      height: 150px;
-  }
-
-  .leader-time {
-      font-size: 13px;
+    width: 150px;
+    height: 150px;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   .leader-card {
-      width: 100%;
-      padding: 0.8em;
+    width: 100%;
+    padding: 0.8em;
   }
 
   .leader-name {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .leader-position {
-      font-size: 10px;
+    font-size: 10px;
   }
 
   .leader-image {
-      width: 120px;
-      height: 120px;
-  }
-
-  .leader-time {
-      font-size: 12px;
+    width: 120px;
+    height: 120px;
   }
 }
